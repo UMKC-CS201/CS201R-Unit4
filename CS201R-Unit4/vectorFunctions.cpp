@@ -8,6 +8,17 @@ void printVector(vector<int> v1) {
     cout << endl;
 }
 
+void bubbleSort(vector<int> arr) {
+    for (int i = 0; i < arr.size() - 1; i++) {
+        // Last i elements are already in place
+        for (int j = 0; j < arr.size() - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+}
+
 void vectorExample1() {
     cout << "\nVECTOR - EXAMPLE 1\n";
     int numb, val, smallest = 0;
@@ -23,6 +34,9 @@ void vectorExample1() {
         listNumb.push_back(val);
     }
     cout << "   The smallest value is: " << smallest << endl;
+
+    bubbleSort(listNumb);
+    printVector(listNumb);
 }
 
 void readVector(string str1, vector<vector<int>> &v1){

@@ -5,7 +5,7 @@
 #include "vectorFunctions.h"
 int main()
 {
- 
+    /*
     cout << "REVIEW EXAMPLES\n";
     //REVIEW - INTEGER DIVISION & STATIC CASTING
     int a = 10, b = 3;
@@ -47,35 +47,13 @@ int main()
         cout << char3 << " ";
     }
     cout << endl << endl;
-    /*
-    //BINARY STRING TO DECIMAL VALUE
-    str1 = "1110";  //binary string
-    int dec = 0, pow = 1;
-    for (int i = str1.length() - 1; i >= 0; --i) {
-        if (str1.at(i) == '1')
-            dec += pow;
-        pow *= 2;
-    }
-    cout << "String: " << str1 << " = " << dec << " in decimal\n";
-
-
-    //DECIMAL VALUE TO BINARY
-    str1 = "";  //binary string
-    int holdValue, decValue = 17, newBase = 2, remainder;
-    holdValue = decValue;
-    while (decValue > 0) {
-        remainder = decValue % newBase;
-        str1 = to_string(remainder) + str1;
-        decValue /= newBase;
-    }
-    cout << "Decimal Value " << holdValue << " = " << str1 << " in binary\n";
-    */
+  */
     cout << endl << endl << endl;
-    //arrayExample1();
+    arrayExample1();    //calling a function pass by reference
     //arrayExample2();
     //arrayExample3();
     //arrayExample4();
-    //arrayExample5();
+    arrayExample5();    //bubble sort
 
     cout << endl << endl << endl;
     //vectorExample1();  //find smallest;add values;print

@@ -17,7 +17,7 @@ void printArray(int a[], const int size) {
 }
 
 double average(int a[], const int size) {
-    int total = 0;
+    double total = 0;
     double avg;
     for (int i = 0; i < size; i++)
         total += a[i];
