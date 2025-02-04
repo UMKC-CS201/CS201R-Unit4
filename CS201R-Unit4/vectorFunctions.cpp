@@ -1,6 +1,11 @@
 #include "vectorFunctions.h"
 
+//PRE: sends in a one dimensional vector
+//POST: if vector is not empty, print vector
 void printVector(vector<int> v1) {
+    if (v1.size() == 0)
+        return;
+
     cout << "\t";
     for (int i = 0; i < v1.size(); ++i)  
         cout << v1.at(i) << " ";
@@ -8,6 +13,19 @@ void printVector(vector<int> v1) {
     cout << endl;
 }
 
+//PRE: sends in current vector & count of new values
+//POST: prompts user to add count elements to the vector
+void addValues(vector<int> v1, int count) {
+    int value;
+    cout << "   Enter " << count << " values: ";
+    for (int i = 0; i < count; i++) {
+        cin >> value;
+        v1.push_back(value);
+    }
+}
+
+//NOTE: this function is not in vectorFunctions.h
+//used only by functions following this definition
 void bubbleSort(vector<int> arr) {
     for (int i = 0; i < arr.size() - 1; i++) {
         // Last i elements are already in place
@@ -26,20 +44,16 @@ void vectorExample1() {
 
     cout << "   Enter the number of additional values for vector: ";
     cin >> numb;
+    addValues(listNumb, numb);
 
-    //add logic to find smallest element
-    cout << "   Enter " << numb << " values: ";
-    for (int i = 0; i < numb; i++) {
-        cin >> val;
-        listNumb.push_back(val);
-    }
+    //add a function to find smallest element
     cout << "   The smallest value is: " << smallest << endl;
 
     bubbleSort(listNumb);
     printVector(listNumb);
 }
 
-void readVector(string str1, vector<vector<int>> &v1){
+void readVector(string str1, vector<vector<int>> v1){
 
     int row, col, tempValue;
     vector<int> currRow;       //this vector represents a row in the 2-D vector
@@ -62,7 +76,15 @@ void readVector(string str1, vector<vector<int>> &v1){
         v1.push_back(currRow);
     }
 }
+
+
+//This is an example of FUNCTION OVERLOADING
+//PRE: sends in a two dimensional vector
+//POST: if vector is not empty, print vector 
 void printVector(vector<vector<int>> v1) {
+    if (v1.size() == 0)
+        return;
+
     cout << "   Printing vector: " << v1.size() << ":" << v1.at(0).size() << endl;
 
     for (int i = 0; i < v1.size(); ++i) {
@@ -74,6 +96,8 @@ void printVector(vector<vector<int>> v1) {
     cout << endl;
 }
 
+//PRE:  2 2-D vectors are sent 
+//POST: if the vectors are the same size, add the values & print result 
 void addVectors(vector<vector<int>> v1, vector<vector<int>> v2) {
  //write logic to add v1 & v2 and print result 
     cout << "   Adding two matrices together:\n";
@@ -84,20 +108,23 @@ void addVectors(vector<vector<int>> v1, vector<vector<int>> v2) {
 
 void vectorExample2() {
     cout << "\nVECTOR - EXAMPLE 2\n";
-    vector<vector<int>> tempV;
-    string str1;
+    
     ifstream inFile;
     inFile.open("data.txt");
     if (!inFile.good()) {
         cout << "  Unable to open file\n";
         return;
     }
-
-    //add logic to read another 2-D matrix
-    //add call to addVectors to add matrices together & print all 3 matrices
     
+    vector<vector<int>> tempV;
+    string str1;
     while (getline(inFile, str1)) {
+        //add logic to read another 2-D matrix
+
         readVector(str1, tempV);
+
+        //add call to addVectors to add matrices together & print all 3 matrices
+        printVector(tempV);
 
     }
 

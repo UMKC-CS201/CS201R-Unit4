@@ -56,7 +56,7 @@ int main()
     arrayExample1();    //calling a function pass by reference
     //arrayExample2();
     //arrayExample3();
-    //arrayExample4();
+    arrayExample4();    //2-D array
     arrayExample5();    //bubble sort
 
     cout << endl << endl << endl;
