@@ -1,15 +1,19 @@
 // CS201R-Unit4.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+//https://github.com/UMKC-CS201/CS201R-Unit4
+
 #include <string>    //for stoi function
 #include "arrayFunctions.h"
 #include "vectorFunctions.h"
 int main()
 {
-    /*
+ 
     cout << "REVIEW EXAMPLES\n";
     //REVIEW - INTEGER DIVISION & STATIC CASTING
     int a = 10, b = 3;
     float result = a / b;
+    cout << "result = " << result << endl << endl;
+    result = a / static_cast<float>(b);
     cout << "result = " << result << endl << endl;
 
     //REVIEW STRING TO INTEGER
@@ -47,7 +51,7 @@ int main()
         cout << char3 << " ";
     }
     cout << endl << endl;
-  */
+ 
     cout << endl << endl << endl;
     arrayExample1();    //calling a function pass by reference
     //arrayExample2();
